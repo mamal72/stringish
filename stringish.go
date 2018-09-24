@@ -30,7 +30,7 @@ func (s *Stringish) ReplaceN(old, new string, count int) *Stringish {
 	return s
 }
 
-// ReplaceAll replaces all occurances of old with new
+// ReplaceAll replaces all occurrences of old with new
 func (s *Stringish) ReplaceAll(old, new string) *Stringish {
 	return s.ReplaceN(old, new, -1)
 }
@@ -110,12 +110,12 @@ func (s *Stringish) Len() int {
 	return len(s.str)
 }
 
-// Index returns the index of first occurance of str in string (-1 if no occurance found)
+// Index returns the index of first occurrence of str in string (-1 if no occurrence found)
 func (s *Stringish) Index(str string) int {
 	return strings.Index(s.str, str)
 }
 
-// LastIndex returns the index of last occurance of str in string (-1 if no occurance found)
+// LastIndex returns the index of last occurrence of str in string (-1 if no occurrence found)
 func (s *Stringish) LastIndex(str string) int {
 	return strings.LastIndex(s.str, str)
 }
