@@ -124,8 +124,19 @@ func (s *Stringish) LastIndex(str string) int {
 func (s *Stringish) Map(mapper func(string) string) *Stringish {
 	s.str = strings.Map(func(char rune) rune {
 		resultChar := mapper(string(char))
-		r := []rune(resultChar)
-		return r[0]
+		return []rune(resultChar)[0]
+	}, s.str)
+	return s
+}
+
+// Filter runs filterer on characters of the string and holds the character if the filterer returns true
+func (s *Stringish) Filter(filterer func(string) bool) *Stringish {
+	s.str = strings.Map(func(char rune) rune {
+		result := filterer(string(char))
+		if result {
+			return char
+		}
+		return -1
 	}, s.str)
 	return s
 }

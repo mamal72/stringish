@@ -42,6 +42,7 @@ go get github.com/mamal72/stringish
 - `Index`
 - `LastIndex`
 - `Map`
+- `Filter`
 - `GetString`
 
 

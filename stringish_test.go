@@ -551,3 +551,30 @@ func TestStringish_Map(t *testing.T) {
 		})
 	}
 }
+
+func TestStringish_Filter(t *testing.T) {
+	type fields struct {
+		str string
+	}
+	type args struct {
+		filterer func(string) bool
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		args   args
+		want   *Stringish
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			s := &Stringish{
+				str: tt.fields.str,
+			}
+			if got := s.Filter(tt.args.filterer); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("Stringish.Filter() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
